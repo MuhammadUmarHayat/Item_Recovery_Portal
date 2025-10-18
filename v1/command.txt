@@ -1,0 +1,13 @@
+python -m  pip install PyMySQL
+python app.py
+
+#debugging
+import pdb
+
+ pdb.set_trace()  # ⛔ Stops here and opens interactive debugger in terminal
+ 
+n	Next line
+s	Step into function
+c	Continue execution
+p variable_name	Print variable value
+q	Quit debugger

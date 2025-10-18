@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flask App Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <h1>Welcome to Flask Modular App</h1>
+  <nav>
+    <a href="{{ url_for('auth_app.login') }}">Login</a> |
+    <a href="{{ url_for('auth_app.signup') }}">Signup</a> |
+    <a href="{{ url_for('customer_app.home') }}">Customer Home</a> |
+    <a href="{{ url_for('admin_app.list_products') }}">Admin Products</a>
+  </nav>
+</body>
+</html>

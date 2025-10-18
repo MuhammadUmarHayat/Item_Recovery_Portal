@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Products</title></head>
+<body>
+  <h2>Product List</h2>
+  <a href="{{ url_for('admin_app.add_product') }}">Add New</a>
+  <table border="1">
+    <tr>
+      <th>ID</th><th>Title</th><th>Description</th><th>Category</th><th>Status</th><th>Actions</th>
+    </tr>
+    {% for item in items %}
+    <tr>
+      <td>{{ item.id }}</td>
+      <td>{{ item.title }}</td>
+      <td>{{ item.description }}</td>
+      <td>{{ item.category }}</td>
+      <td>{{ item.status }}</td>
+      <td>
+        <a href="{{ url_for('admin_app.edit_product', id=item.id) }}">Edit</a> |
+        <a href="{{ url_for('admin_app.delete_product', id=item.id) }}">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
