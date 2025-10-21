@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Signup</title></head>
+<body>
+  <h2>Create Account</h2>
+  <form method="POST">
+    <label>Username:</label><input type="text" name="username" required><br>
+    <label>Name:</label><input type="text" name="name" required><br>
+    <label>Email:</label><input type="email" name="email" required><br>
+    <label>Password:</label><input type="password" name="password" required><br>
+    <label>Mobile:</label><input type="text" name="mobile" required><br>
+    <label>Address:</label><textarea name="address" required></textarea><br>
+    <button type="submit">Signup</button>
+  </form>
+  <p>Already have an account? <a href="{{ url_for('auth_app.login') }}">Login</a></p>
+</body>
+</html>

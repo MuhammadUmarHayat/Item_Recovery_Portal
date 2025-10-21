@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>Login</title></head>
+<body>
+  <h2>Login</h2>
+  <form method="POST">
+
+   {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<select name="user_type" id="user_type">
+  <option value="admin">Admin</option>
+  <option value="customer">Client</option>
+  
+</select>
+<br>
+    <label>Username:</label><input type="text" name="username" required><br>
+    <label>Password:</label><input type="password" name="password" required><br>
+    <button type="submit">Login</button>
+  </form>
+  <p>Don't have an account? <a href="{{ url_for('auth_app.signup') }}">Signup</a></p>
+</body>
+</html>

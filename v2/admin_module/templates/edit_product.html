@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit Product</title></head>
+<body>
+  <h2>Edit Product</h2>
+  <form method="POST">
+    <label>Title:</label><input type="text" name="title" value="{{ item.title }}"><br>
+    <label>Description:</label><textarea name="description">{{ item.description }}</textarea><br>
+    <label>Category:</label><input type="text" name="category" value="{{ item.category }}"><br>
+    <label>Status:</label><input type="number" name="status" value="{{ item.status }}"><br>
+    <button type="submit">Update</button>
+  </form>
+</body>
+</html>

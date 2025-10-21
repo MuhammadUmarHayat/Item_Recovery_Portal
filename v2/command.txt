@@ -1,0 +1,23 @@
+python -m  pip install PyMySQL
+
+python app.py
+
+python -m pip install opencv-python scikit-image numpy
+
+or 
+python -m pip install imageio pillow numpy
+
+
+
+#debugging
+import pdb
+
+ pdb.set_trace()  # ⛔ Stops here and opens interactive debugger in terminal
+ 
+n	Next line
+s	Step into function
+c	Continue execution
+p variable_name	Print variable value
+q	Quit debugger
+
+flask run

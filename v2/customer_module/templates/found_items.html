@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Item</title>
+</head>
+<body>
+    <h2>Add New Item</h2>
+   
+   <form action="{{ url_for('customer_app.foundItems') }}" method="post" enctype="multipart/form-data">
+
+        <label>Title:</label><br>
+        <input type="text" name="title" required><br><br>
+
+        <label>Found By:</label><br>
+        <textarea name="found_by" required></textarea><br><br>
+
+        <label>Found Date:</label><br>
+        <input type="text" name="found_date" placeholder="e.g. electronics" required><br><br>
+
+        <label>Details:</label><br>
+        <input type="text" name="remarks" required><br><br>
+
+        <label>Status:</label><br>
+        <input type="text" name="status"><br><br>
+
+        
+        <input type="file" name="photo" required><br><br>
+
+        <button type="submit">Add Item</button>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for msg in messages %}
+            <li>{{ msg }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>

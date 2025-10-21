@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Item</title>
+</head>
+<body>
+    <h2>Add New Item</h2>
+   <form action="{{ url_for('customer_app.lostItems') }}" method="post" enctype="multipart/form-data">
+
+        <label>Title:</label><br>
+        <input type="text" name="title" required><br><br>
+
+        <label>Description:</label><br>
+        <textarea name="description" required></textarea><br><br>
+
+        <label>Category:</label><br>
+        <input type="text" name="category" placeholder="e.g. electronics" required><br><br>
+
+        <label>Username:</label><br>
+        <input type="text" name="username" required><br><br>
+
+        <label>Remarks:</label><br>
+        <input type="text" name="remarks"><br><br>
+
+        <label>Photo:</label><br>
+        <input type="file" name="photo" required><br><br>
+
+        <button type="submit">Add Item</button>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for msg in messages %}
+            <li>{{ msg }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>
